@@ -1,0 +1,98 @@
+.yun-tooltip {
+  --yun-popover-bg-color: var(--yun-bg-color-overlay);
+  --yun-popover-font-size: var(--yun-font-size-base);
+  --yun-popover-border-color: var(--yun-border-color);
+  --yun-popover-padding: 12px;
+  --yun-popover-border-radius: 10px;
+  display: inline-block;
+}
+
+.yun-tooltip {
+  .yun-tooltip__popper {
+    background: var(--yun-popover-bg-color);
+    border-radius: var(--yun-popover-border-radius);
+    border: 1px solid var(--yun-popover-border-color);
+    padding: var(--yun-popover-padding);
+    color: var(--yun-text-color-regular);
+    line-height: 1.4;
+    text-align: justify;
+    font-size: var(--yun-popover-font-size);
+    box-shadow: var(--yun-box-shadow-light);
+    word-break: break-all;
+    box-sizing: border-box;
+    z-index: 1000;
+    #arrow,
+    #arrow::before {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      box-sizing: border-box;
+      background: var(--yun-popover-bg-color);
+    }
+    #arrow {
+      visibility: hidden;
+    }
+    #arrow::before {
+      visibility: visible;
+      content: "";
+      transform: rotate(45deg);
+    }
+    &[data-popper-placement^='top'] > #arrow {
+      bottom: -5px;
+    }
+    
+    &[data-popper-placement^='bottom'] > #arrow {
+      top: -5px;
+    }
+    
+    &[data-popper-placement^='left'] > #arrow {
+      right: -5px;
+    }
+    
+    &[data-popper-placement^='right'] > #arrow {
+      left: -5px;
+    }
+    &[data-popper-placement^="top"] > #arrow::before {
+      border-right: 1px solid var(--yun-popover-border-color);
+      border-bottom: 1px solid var(--yun-popover-border-color);
+    }
+    &[data-popper-placement^="bottom"] > #arrow::before {
+      border-left: 1px solid var(--yun-popover-border-color);
+      border-top: 1px solid var(--yun-popover-border-color);
+    }
+    &[data-popper-placement^="left"] > #arrow::before {
+      border-right: 1px solid var(--yun-popover-border-color);
+      border-top: 1px solid var(--yun-popover-border-color);
+    }
+    &[data-popper-placement^="right"] > #arrow::before {
+      border-left: 1px solid var(--yun-popover-border-color);
+      border-bottom: 1px solid var(--yun-popover-border-color);
+    }
+  }  
+  .yun-tooltip__popper.is-dark {
+    --yun-popover-bg-color: #1f1f1f;  
+    --yun-text-color-regular: #e0e0e0; 
+    --yun-popover-border-color: rgba(255,255,255,0.12); 
+
+    background: var(--yun-popover-bg-color);
+    color: var(--yun-text-color-regular);
+    border-color: var(--yun-popover-border-color);
+    #arrow::before {
+      background: var(--yun-popover-bg-color);
+      border-color: var(--yun-popover-border-color);
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity var(--yun-transition-duration);
+    }
+  }
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity var(--yun-transition-duration);
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+}

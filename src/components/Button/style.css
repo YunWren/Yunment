@@ -1,0 +1,237 @@
+.yun-button {
+  --yun-button-font-weight: var(--yun-font-weight-primary);
+  --yun-button-border-color: var(--yun-border-color);
+  --yun-button-bg-color: var(--yun-fill-color-blank);
+  --yun-button-text-color: var(--yun-text-color-regular);
+  --yun-button-disabled-text-color: var(--yun-disabled-text-color);
+  --yun-button-disabled-bg-color: var(--yun-fill-color-blank);
+  --yun-button-disabled-border-color: var(--yun-border-color-light);
+  --yun-button-hover-text-color: var(--yun-color-primary);
+  --yun-button-hover-bg-color: var(--yun-color-primary-light-8);
+  --yun-button-hover-border-color: var(--yun-color-primary-light-7);
+  --yun-button-active-text-color: var(--yun-button-hover-text-color);
+  --yun-button-active-border-color: var(--yun-color-primary);
+  --yun-button-active-bg-color: var(--yun-button-hover-bg-color);
+  --yun-button-outline-color: var(--yun-color-primary-light-5);
+  --yun-button-active-color: var(--yun-text-color-primary);
+}
+.yun-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--yun-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: .1s;
+  font-weight: var(--yun-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--yun-button-bg-color);
+  border: var(--yun-border);
+  border-color: var(--yun-button-border-color);
+  padding: 8px 15px;
+  font-size: var(--yun-font-size-base);
+  border-radius: var(--yun-border-radius-base);
+  & + & {
+    margin-left: 12px;
+  }
+  &:hover,
+  &:focus {
+    color: var(--yun-button-hover-text-color);
+    border-color: var(--yun-button-hover-border-color);
+    background-color: var(--yun-button-hover-bg-color);
+    outline: none;    
+  }
+  &:active {
+    color: var(--yun-button-active-text-color);
+    border-color: var(--yun-button-active-border-color);
+    background-color: var(--yun-button-active-bg-color);
+    outline: none;
+  }
+  &.is-plain {
+    --yun-button-hover-text-color: var(--yun-color-primary);
+    --yun-button-hover-bg-color: var(--yun-fill-color-blank);
+    --yun-button-hover-border-color: var(--yun-color-primary);    
+  }
+  /*round*/
+  &.is-round {
+    border-radius: var(--yun-border-radius-round);
+  }
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 8px;
+  }
+  /*disabled*/
+  &.is-disabled, &.is-disabled:hover, &.is-disabled:focus, 
+  &[disabled], &[disabled]:hover, &[disabled]:focus 
+  {
+    color: var(--yun-button-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--yun-button-disabled-bg-color);
+    border-color: var(--yun-button-disabled-border-color);
+  }
+  [class*=yun-icon] + span {
+    margin-left: 6px;
+  }
+}
+
+/* ================== 基础按钮 ================== */
+.yun-button--primary {
+  --yun-button-text-color: var(--yun-color-white);
+  --yun-button-bg-color: var(--yun-color-primary);
+  --yun-button-border-color: var(--yun-color-primary);
+  --yun-button-outline-color: var(--yun-color-primary-light-5);
+  --yun-button-active-color: var(--yun-color-primary-dark-2);
+  --yun-button-hover-text-color: var(--yun-color-white);
+  --yun-button-hover-bg-color: var(--yun-color-primary-light-3);
+  --yun-button-hover-border-color: var(--yun-color-primary-light-3);
+  --yun-button-active-bg-color: var(--yun-color-primary-dark-2);
+  --yun-button-active-border-color: var(--yun-color-primary-dark-2);
+  --yun-button-disabled-text-color: var(--yun-color-white);
+  --yun-button-disabled-bg-color: var(--yun-color-primary-light-5);
+  --yun-button-disabled-border-color: var(--yun-color-primary-light-5);
+}
+
+.yun-button--success {
+  --yun-button-text-color: var(--yun-color-white);
+  --yun-button-bg-color: var(--yun-color-success);
+  --yun-button-border-color: var(--yun-color-success);
+  --yun-button-outline-color: var(--yun-color-success-light-5);
+  --yun-button-active-color: var(--yun-color-success-dark-2);
+  --yun-button-hover-text-color: var(--yun-color-white);
+  --yun-button-hover-bg-color: var(--yun-color-success-light-3);
+  --yun-button-hover-border-color: var(--yun-color-success-light-3);
+  --yun-button-active-bg-color: var(--yun-color-success-dark-2);
+  --yun-button-active-border-color: var(--yun-color-success-dark-2);
+  --yun-button-disabled-text-color: var(--yun-color-white);
+  --yun-button-disabled-bg-color: var(--yun-color-success-light-5);
+  --yun-button-disabled-border-color: var(--yun-color-success-light-5);
+}
+
+/* 其他类型 (warning/info/danger) 写法相同，替换 "primary" 为对应名称即可 */
+
+/* ================== 朴素按钮 ================== */
+.yun-button--primary.is-plain {
+  --yun-button-text-color: var(--yun-color-primary);
+  --yun-button-bg-color: var(--yun-color-primary-light-8);
+  --yun-button-border-color: var(--yun-color-primary-light-5);
+  --yun-button-hover-text-color: var(--yun-color-white);
+  --yun-button-hover-bg-color: var(--yun-color-primary);
+  --yun-button-hover-border-color: var(--yun-color-primary);
+  --yun-button-active-text-color: var(--yun-color-white);
+}
+
+.yun-button--success.is-plain {
+  --yun-button-text-color: var(--yun-color-success);
+  --yun-button-bg-color: var(--yun-color-success-light-8);
+  --yun-button-border-color: var(--yun-color-success-light-5);
+  --yun-button-hover-text-color: var(--yun-color-white);
+  --yun-button-hover-bg-color: var(--yun-color-success);
+  --yun-button-hover-border-color: var(--yun-color-success);
+  --yun-button-active-text-color: var(--yun-color-white);
+}
+
+.yun-button--info {
+  --yun-button-text-color: var(--yun-color-white);
+  --yun-button-bg-color: var(--yun-color-info);
+  --yun-button-border-color: var(--yun-color-info);
+  --yun-button-outline-color: var(--yun-color-info-light-5);
+  --yun-button-active-color: var(--yun-color-info-dark-2);
+  --yun-button-hover-text-color: var(--yun-color-white);
+  --yun-button-hover-bg-color: var(--yun-color-info-light-3);
+  --yun-button-hover-border-color: var(--yun-color-info-light-3);
+  --yun-button-active-bg-color: var(--yun-color-info-dark-2);
+  --yun-button-active-border-color: var(--yun-color-info-dark-2);
+  --yun-button-disabled-text-color: var(--yun-color-white);
+  --yun-button-disabled-bg-color: var(--yun-color-info-light-5);
+  --yun-button-disabled-border-color: var(--yun-color-info-light-5);
+}
+
+/* ================== Info 朴素按钮 ================== */
+.yun-button--info.is-plain {
+  --yun-button-text-color: var(--yun-color-info);
+  --yun-button-bg-color: var(--yun-color-info-light-8);
+  --yun-button-border-color: var(--yun-color-info-light-5);
+  --yun-button-hover-text-color: var(--yun-color-white);
+  --yun-button-hover-bg-color: var(--yun-color-info);
+  --yun-button-hover-border-color: var(--yun-color-info);
+  --yun-button-active-text-color: var(--yun-color-white);
+}
+
+/* ================== Warning 基础按钮 ================== */
+.yun-button--warning {
+  --yun-button-text-color: var(--yun-color-white);
+  --yun-button-bg-color: var(--yun-color-warning);
+  --yun-button-border-color: var(--yun-color-warning);
+  --yun-button-outline-color: var(--yun-color-warning-light-5);
+  --yun-button-active-color: var(--yun-color-warning-dark-2);
+  --yun-button-hover-text-color: var(--yun-color-white);
+  --yun-button-hover-bg-color: var(--yun-color-warning-light-3);
+  --yun-button-hover-border-color: var(--yun-color-warning-light-3);
+  --yun-button-active-bg-color: var(--yun-color-warning-dark-2);
+  --yun-button-active-border-color: var(--yun-color-warning-dark-2);
+  --yun-button-disabled-text-color: var(--yun-color-white);
+  --yun-button-disabled-bg-color: var(--yun-color-warning-light-5);
+  --yun-button-disabled-border-color: var(--yun-color-warning-light-5);
+}
+
+/* ================== Warning 朴素按钮 ================== */
+.yun-button--warning.is-plain {
+  --yun-button-text-color: var(--yun-color-warning);
+  --yun-button-bg-color: var(--yun-color-warning-light-8);
+  --yun-button-border-color: var(--yun-color-warning-light-5);
+  --yun-button-hover-text-color: var(--yun-color-white);
+  --yun-button-hover-bg-color: var(--yun-color-warning);
+  --yun-button-hover-border-color: var(--yun-color-warning);
+  --yun-button-active-text-color: var(--yun-color-white);
+}
+
+.yun-button--danger {
+  --yun-button-text-color: var(--yun-color-white);
+  --yun-button-bg-color: var(--yun-color-danger);
+  --yun-button-border-color: var(--yun-color-danger);
+  --yun-button-outline-color: var(--yun-color-danger-light-5);
+  --yun-button-active-color: var(--yun-color-danger-dark-2);
+  --yun-button-hover-text-color: var(--yun-color-white);
+  --yun-button-hover-bg-color: var(--yun-color-danger-light-3);
+  --yun-button-hover-border-color: var(--yun-color-danger-light-3);
+  --yun-button-active-bg-color: var(--yun-color-danger-dark-2);
+  --yun-button-active-border-color: var(--yun-color-danger-dark-2);
+  --yun-button-disabled-text-color: var(--yun-color-white);
+  --yun-button-disabled-bg-color: var(--yun-color-danger-light-5);
+  --yun-button-disabled-border-color: var(--yun-color-danger-light-5);
+}
+
+.yun-button--danger.is-plain {
+  --yun-button-text-color: var(--yun-color-danger);
+  --yun-button-bg-color: var(--yun-color-danger-light-8);
+  --yun-button-border-color: var(--yun-color-danger-light-5);
+  --yun-button-hover-text-color: var(--yun-color-white);
+  --yun-button-hover-bg-color: var(--yun-color-danger);
+  --yun-button-hover-border-color: var(--yun-color-danger);
+  --yun-button-active-text-color: var(--yun-color-white);
+}
+
+.yun-button--large {
+  --yun-button-size: 40px;
+  height: var(--yun-button-size);
+  padding: 12px 18px;
+  font-size: var(--yun-font-size-base);
+  border-radius: var(--yun-border-radius-base);
+}
+.yun-button--small {
+  --yun-button-size: 24px;
+  height: var(--yun-button-size);
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--yun-border-radius-base) - 1px);
+}
+
