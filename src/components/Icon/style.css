@@ -1,0 +1,26 @@
+.yun-icon {
+  --yun-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--yun-icon-color);
+  font-size: inherit;
+}
+
+.yun-icon--primary {
+  --yun-icon-color: var(--yun-color-primary);
+}
+.yun-icon--info {
+  --yun-icon-color: var(--yun-color-info);
+}
+.yun-icon--success {
+  --yun-icon-color: var(--yun-color-success);
+}
+.yun-icon--warning {
+  --yun-icon-color: var(--yun-color-warning);
+}
+.yun-icon--danger {
+  --yun-icon-color: var(--yun-color-danger);
+}

@@ -1,0 +1,56 @@
+.yun-collapse {
+  --yun-collapse-border-color: var(--yun-border-color-light);
+  --yun-collapse-header-height: 48px;
+  --yun-collapse-header-bg-color: var(--yun-fill-color-blank);
+  --yun-collapse-header-text-color: var(--yun-text-color-primary);
+  --yun-collapse-header-font-size: 13px;
+  --yun-collapse-content-bg-color: var(--yun-fill-color-blank);
+  --yun-collapse-content-font-size: 13px;
+  --yun-collapse-content-text-color: var(--yun-text-color-primary);
+  --yun-collapse-disabled-text-color: var(--yun-disabled-text-color);
+  --yun-collapse-disabled-border-color: var(--yun-border-color-lighter);
+  border-top: 1px solid var(--yun-collapse-border-color);
+  border-bottom: 1px solid var(--yun-collapse-border-color);
+}
+.yun-collapse-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--yun-collapse-header-height);
+  line-height: var(--yun-collapse-header-height);
+  background-color: var(--yun-collapse-header-bg-color);
+  color: var(--yun-collapse-header-text-color);
+  cursor: pointer;
+  font-size: var(--yun-collapse-header-font-size);
+  font-weight: 500;
+  transition: border-bottom-color var(--yun-transition-duration);
+  outline: none;
+  border-bottom: 1px solid var(--yun-collapse-border-color);
+  &.is-disabled {
+    color: var(--yun-collapse-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+  }
+  &.is-active {
+    border-bottom-color: transparent;
+    .header-angle {
+      transform: rotate(90deg);
+    }
+  }
+  .header-angle {
+    transition: transform var(--yun-transition-duration);
+  }
+}
+.yun-collapse-item__content {
+  will-change: height;
+  background-color: var(--yun-collapse-content-bg-color);
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: var(--yun-collapse-content-font-size);
+  color: var(--yun-collapse-content-text-color);
+  border-bottom: 1px solid var(--yun-collapse-border-color);
+  padding-bottom: 25px;
+}
+.slide-enter-active, .slide-leave-active {
+  transition: height 0.5s ease-in-out
+}

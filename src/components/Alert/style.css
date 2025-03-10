@@ -1,0 +1,194 @@
+.yun-alert {
+  position: relative;
+  padding: 12px 20px;
+  margin: 10px 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 1px solid transparent; /* 添加默认边框 */
+  background-color: var(--yun-alert-bg-color);
+  color: var(--yun-alert-text-color);
+  border-color: var(--yun-alert-border-color);
+  &.is-effect {
+    --yun-button-hover-text-color: var(--yun-color-primary);
+    --yun-button-hover-bg-color: var(--yun-fill-color-blank);
+    --yun-button-hover-border-color: var(--yun-color-primary);    
+  }
+}
+
+/* 主题样式 */
+  /* 类型配色 */
+  .yun-alert--primary {
+    --yun-alert-text-color: var(--yun-color-white);
+    --yun-alert-bg-color: var(--yun-color-primary);
+    --yun-alert-border-color: var(--yun-color-primary);
+    --yun-alert-outline-color: var(--yun-color-primary-light-5);
+    --yun-alert-active-color: var(--yun-color-primary-dark-2);
+    --yun-alert-hover-text-color: var(--yun-color-white);
+    --yun-alert-hover-bg-color: var(--yun-color-primary-light-3);
+    --yun-alert-hover-border-color: var(--yun-color-primary-light-3);
+    --yun-alert-active-bg-color: var(--yun-color-primary-dark-2);
+    --yun-alert-active-border-color: var(--yun-color-primary-dark-2);
+    --yun-alert-disabled-text-color: var(--yun-color-white);
+    --yun-alert-disabled-bg-color: var(--yun-color-primary-light-5);
+    --yun-alert-disabled-border-color: var(--yun-color-primary-light-5);
+    /* background-color: var(--yun-alert-bg-color) !important; */
+  }
+  
+  .yun-alert--success {
+    --yun-alert-text-color: var(--yun-color-white);
+    --yun-alert-bg-color: var(--yun-color-success);
+    --yun-alert-border-color: var(--yun-color-success);
+    --yun-alert-outline-color: var(--yun-color-success-light-5);
+    --yun-alert-active-color: var(--yun-color-success-dark-2);
+    --yun-alert-hover-text-color: var(--yun-color-white);
+    --yun-alert-hover-bg-color: var(--yun-color-success-light-3);
+    --yun-alert-hover-border-color: var(--yun-color-success-light-3);
+    --yun-alert-active-bg-color: var(--yun-color-success-dark-2);
+    --yun-alert-active-border-color: var(--yun-color-success-dark-2);
+    --yun-alert-disabled-text-color: var(--yun-color-white);
+    --yun-alert-disabled-bg-color: var(--yun-color-success-light-5);
+    --yun-alert-disabled-border-color: var(--yun-color-success-light-5);
+  }
+  
+  /* 其他类型 (warning/info/danger) 写法相同，替换 "primary" 为对应名称即可 */
+  
+  /* ================== 朴素按钮 ================== */
+  .yun-alert--primary.is-effect {
+    --yun-alert-text-color: var(--yun-color-primary);
+    --yun-alert-bg-color: var(--yun-color-primary-light-8);
+    --yun-alert-border-color: var(--yun-color-primary-light-5);
+    --yun-alert-hover-text-color: var(--yun-color-white);
+    --yun-alert-hover-bg-color: var(--yun-color-primary);
+    --yun-alert-hover-border-color: var(--yun-color-primary);
+    --yun-alert-active-text-color: var(--yun-color-white);
+  }
+  
+  .yun-alert--success.is-effect {
+    --yun-alert-text-color: var(--yun-color-success);
+    --yun-alert-bg-color: var(--yun-color-success-light-8);
+    --yun-alert-border-color: var(--yun-color-success-light-5);
+    --yun-alert-hover-text-color: var(--yun-color-white);
+    --yun-alert-hover-bg-color: var(--yun-color-success);
+    --yun-alert-hover-border-color: var(--yun-color-success);
+    --yun-alert-active-text-color: var(--yun-color-white);
+  }
+  
+  .yun-alert--info {
+    --yun-alert-text-color: var(--yun-color-white);
+    --yun-alert-bg-color: var(--yun-color-info);
+    --yun-alert-border-color: var(--yun-color-info);
+    --yun-alert-outline-color: var(--yun-color-info-light-5);
+    --yun-alert-active-color: var(--yun-color-info-dark-2);
+    --yun-alert-hover-text-color: var(--yun-color-white);
+    --yun-alert-hover-bg-color: var(--yun-color-info-light-3);
+    --yun-alert-hover-border-color: var(--yun-color-info-light-3);
+    --yun-alert-active-bg-color: var(--yun-color-info-dark-2);
+    --yun-alert-active-border-color: var(--yun-color-info-dark-2);
+    --yun-alert-disabled-text-color: var(--yun-color-white);
+    --yun-alert-disabled-bg-color: var(--yun-color-info-light-5);
+    --yun-alert-disabled-border-color: var(--yun-color-info-light-5);
+  }
+  
+  /* ================== Info 朴素按钮 ================== */
+  .yun-alert--info.is-effect {
+    --yun-alert-text-color: var(--yun-color-info);
+    --yun-alert-bg-color: var(--yun-color-info-light-8);
+    --yun-alert-border-color: var(--yun-color-info-light-5);
+    --yun-alert-hover-text-color: var(--yun-color-white);
+    --yun-alert-hover-bg-color: var(--yun-color-info);
+    --yun-alert-hover-border-color: var(--yun-color-info);
+    --yun-alert-active-text-color: var(--yun-color-white);
+  }
+  
+  /* ================== Warning 基础按钮 ================== */
+  .yun-alert--warning {
+    --yun-alert-text-color: var(--yun-color-white);
+    --yun-alert-bg-color: var(--yun-color-warning);
+    --yun-alert-border-color: var(--yun-color-warning);
+    --yun-alert-outline-color: var(--yun-color-warning-light-5);
+    --yun-alert-active-color: var(--yun-color-warning-dark-2);
+    --yun-alert-hover-text-color: var(--yun-color-white);
+    --yun-alert-hover-bg-color: var(--yun-color-warning-light-3);
+    --yun-alert-hover-border-color: var(--yun-color-warning-light-3);
+    --yun-alert-active-bg-color: var(--yun-color-warning-dark-2);
+    --yun-alert-active-border-color: var(--yun-color-warning-dark-2);
+    --yun-alert-disabled-text-color: var(--yun-color-white);
+    --yun-alert-disabled-bg-color: var(--yun-color-warning-light-5);
+    --yun-alert-disabled-border-color: var(--yun-color-warning-light-5);
+  }
+  
+  /* ================== Warning 朴素按钮 ================== */
+  .yun-alert--warning.is-effect {
+    --yun-alert-text-color: var(--yun-color-warning);
+    --yun-alert-bg-color: var(--yun-color-warning-light-8);
+    --yun-alert-border-color: var(--yun-color-warning-light-5);
+    --yun-alert-hover-text-color: var(--yun-color-white);
+    --yun-alert-hover-bg-color: var(--yun-color-warning);
+    --yun-alert-hover-border-color: var(--yun-color-warning);
+    --yun-alert-active-text-color: var(--yun-color-white);
+  }
+  
+  .yun-alert--danger {
+    --yun-alert-text-color: var(--yun-color-white);
+    --yun-alert-bg-color: var(--yun-color-danger);
+    --yun-alert-border-color: var(--yun-color-danger);
+    --yun-alert-outline-color: var(--yun-color-danger-light-5);
+    --yun-alert-active-color: var(--yun-color-danger-dark-2);
+    --yun-alert-hover-text-color: var(--yun-color-white);
+    --yun-alert-hover-bg-color: var(--yun-color-danger-light-3);
+    --yun-alert-hover-border-color: var(--yun-color-danger-light-3);
+    --yun-alert-active-bg-color: var(--yun-color-danger-dark-2);
+    --yun-alert-active-border-color: var(--yun-color-danger-dark-2);
+    --yun-alert-disabled-text-color: var(--yun-color-white);
+    --yun-alert-disabled-bg-color: var(--yun-color-danger-light-5);
+    --yun-alert-disabled-border-color: var(--yun-color-danger-light-5);
+  }
+  
+  .yun-alert--danger.is-effect {
+    --yun-alert-text-color: var(--yun-color-danger);
+    --yun-alert-bg-color: var(--yun-color-danger-light-8);
+    --yun-alert-border-color: var(--yun-color-danger-light-5);
+    --yun-alert-hover-text-color: var(--yun-color-white);
+    --yun-alert-hover-bg-color: var(--yun-color-danger);
+    --yun-alert-hover-border-color: var(--yun-color-danger);
+    --yun-alert-active-text-color: var(--yun-color-white);
+  }
+
+.alert-icon {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.alert-content {
+  flex: 1;
+  line-height: 1.5;
+}
+
+.alert-close {
+  margin-left: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+/* 过渡动画 */
+.yun-alert-fade-enter-active,
+.yun-alert-fade-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.yun-alert-fade-enter-from,
+.yun-alert-fade-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
