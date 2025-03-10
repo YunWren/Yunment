@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Logs
 logs
@@ -29,3 +30,6 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+=======
+node_modules
+>>>>>>> 8ced666a9961e9f40f8d2a279c5bccb350b42957
