@@ -10,6 +10,7 @@ import type { ButtonInstance } from '@/components/Button/types'
 import type { Tooltipinstance } from './components/Tooltip/types'
 import Dropdown from './components/Dropdown/Dropdown.vue'
 import type { MenuOption } from './components/Dropdown/types'
+import Message from './Message/Message.vue'
 const buttonRef = ref<ButtonInstance | null>(null)
 const trigger = ref<any>('click')
 const dropdownTrigger = ref<any>('click')
@@ -45,6 +46,7 @@ const close =()=>{
 </script>
 
 <template>
+  <Message message="hello message" showClose></Message>
   <header>
     <Tooltip dark :trigger="trigger" ref="tooltipRef" :close-delay="300" :open-delay="300">
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="300" height="300" />
@@ -146,5 +148,8 @@ nav {
     place-items: flex-start;
     flex-wrap: wrap;
   }
+}
+main {
+  margin-bottom: 200px;
 }
 </style>
