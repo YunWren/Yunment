@@ -11,6 +11,7 @@ import type { Tooltipinstance } from './components/Tooltip/types'
 import Dropdown from './components/Dropdown/Dropdown.vue'
 import type { MenuOption } from './components/Dropdown/types'
 import Message from './Message/Message.vue'
+import { createMessage } from './Message/method'
 const buttonRef = ref<ButtonInstance | null>(null)
 const trigger = ref<any>('click')
 const dropdownTrigger = ref<any>('click')
@@ -24,13 +25,17 @@ const options:MenuOption[] = [
 ]
 
 onMounted(() => {
+  const instance = createMessage({message:'hello world',duration:0})
+  createMessage({message:'hello world 2',duration:0})
+  createMessage({message:'hello world 3',duration:0})
   if (buttonRef.value) {
     // console.log('buttonRefvalue', buttonRef.value)
-    console.log('buttonRef', buttonRef.value.ref)
+    // console.log('buttonRef', buttonRef.value.ref)
   }
   setTimeout(() => {
     // openedValue.value=['a','b']
     // trigger.value = 'hover'
+    instance.destory()
   }, 2000)
 })
 const open =()=>{
@@ -46,7 +51,6 @@ const close =()=>{
 </script>
 
 <template>
-  <Message message="hello message" showClose></Message>
   <header>
     <Tooltip dark :trigger="trigger" ref="tooltipRef" :close-delay="300" :open-delay="300">
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="300" height="300" />

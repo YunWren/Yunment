@@ -66,7 +66,7 @@ const attachEvents = ()=>{
     outerEvents['mouseleave'] = closeFinal
   } else if(props.trigger === 'click') {
     events['click'] = togglePopper
-    console.log('触发了', props.trigger);
+    // console.log('触发了', props.trigger);
     
   }
 }
