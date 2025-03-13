@@ -10,8 +10,9 @@ import type { ButtonInstance } from '@/components/Button/types'
 import type { Tooltipinstance } from './components/Tooltip/types'
 import Dropdown from './components/Dropdown/Dropdown.vue'
 import type { MenuOption } from './components/Dropdown/types'
-import Message from './Message/Message.vue'
-import { createMessage } from './Message/method'
+import Message from './components/Message/Message.vue'
+import { createMessage } from './components/Message/method'
+import { log } from 'console'
 const buttonRef = ref<ButtonInstance | null>(null)
 const trigger = ref<any>('click')
 const dropdownTrigger = ref<any>('click')
@@ -21,13 +22,10 @@ const options:MenuOption[] = [
   {key:1,label:h('b','this is testA')},
   {key:2,label:'item 2',disabled:true},
   {key:3,label:'item 3',divided:true},
-  {key:4,label:'item 4'},  
+  {key:4,label:'item 4',divided:true},  
 ]
 
 onMounted(() => {
-  const instance = createMessage({message:'hello world',duration:0})
-  createMessage({message:'hello world 2',duration:0})
-  createMessage({message:'hello world 3',duration:0})
   if (buttonRef.value) {
     // console.log('buttonRefvalue', buttonRef.value)
     // console.log('buttonRef', buttonRef.value.ref)
@@ -35,7 +33,7 @@ onMounted(() => {
   setTimeout(() => {
     // openedValue.value=['a','b']
     // trigger.value = 'hover'
-    instance.destory()
+    // instance.destory()
   }, 2000)
 })
 const open =()=>{
@@ -46,6 +44,13 @@ const open =()=>{
 const close =()=>{
   tooltipRef.value?.hide()
   // console.log('close');
+}
+function createMge (event: Event){
+      const target = event.currentTarget as HTMLElement
+      const type = target.dataset
+      const content = target.textContent?.trim() // "success message"
+      // @ts-ignore
+      createMessage({ message: `${content}, will disappear in 2 seconds...`, type:content, showClose: true })    
 }
   
 </script>
@@ -115,6 +120,15 @@ const close =()=>{
     <Dropdown placement="bottom" :trigger="dropdownTrigger" :menu-options="options">
       <Button>click me</Button>
     </Dropdown>
+    <br/><br/>
+    <div class="showMessage">
+      <h2><b>Message 提示组件样式展示</b></h2><br>
+      <Button type="success" @click="createMge">success</Button>
+      <Button type="info" @click="createMge">info</Button>
+      <Button type="warning" @click="createMge">warning</Button>
+      <Button type="danger" @click="createMge">danger</Button><br/><br/>
+      <p>如果你认为屏幕上存在太多message让你困扰,试图点击键盘'Esc'键一键清屏。</p>
+    </div>
   </main>
 
 </template>

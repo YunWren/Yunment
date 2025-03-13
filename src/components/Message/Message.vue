@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import { onMounted, ref, computed,nextTick } from 'vue'
 import Icon from '@/components/Icon/Icon.vue'
-import type {MessageProps} from './types'
+import type { MessageProps } from './types'
 import RenderVnode from '@/components/Common/RenderVnode'
 import { watch } from 'vue';
 import { getLastBottomOffset } from './method';
-
+import useEventListener from '@/hooks/useEventListener'
 const props = withDefaults(defineProps<MessageProps>(), {
   type:'info',
-  duration:3000,
-  offset:20,
+  duration:2000,
+  offset:15,
+  transitionName:'fade-up'
 })
 
 const visible = ref(false)
@@ -27,25 +28,41 @@ const cssStyle = computed(()=>({
   top:topOffset.value +'px',
   zIndex:props.zIndex
 }))
-function startTimer() {
-  if (props.duration === 0) return
-  setTimeout(() => {
-    visible.value = false 
-  }, props.duration)
+function keydown(e:Event){
+  const event = e as KeyboardEvent
+  if(event.code === 'Escape') {
+    visible.value = false
+  }
 }
 onMounted (async()=>{
   visible.value = true
-  startTimer()
-  await nextTick(),
+  startTimer()  
+})
+useEventListener(document,'keydown',keydown)
+let timer:any
+function startTimer() {
+  if (props.duration === 0) return
+  timer = setTimeout(() => {
+    visible.value = false 
+  }, props.duration)
+}
+function clearTimer(){
+  clearTimeout(timer)
+  console.log('终止销毁')
+  
+}
+
+function destoryComponent (){
+  props.onDestory()
+}
+function updateHeight(){
   height.value = messageRef.value!.getBoundingClientRect().height
-})
-
-
-watch(visible,(newVlaue)=>{
-  if(!newVlaue){
-    props.onDestory()
-  }
-})
+}
+// watch(visible,(newVlaue)=>{
+//   if(!newVlaue){
+//     props.onDestory()
+//   }
+// })
 defineExpose({
   bottomOffset,
   visible
@@ -53,6 +70,7 @@ defineExpose({
 </script>
 
 <template>
+  <Transition :name="transitionName" @after-leave="destoryComponent" @enter="updateHeight">
   <div
     class="yun-message"
     v-show="visible"
@@ -62,10 +80,12 @@ defineExpose({
       'is-close':showClose}"
     ref="messageRef"
     :style="cssStyle"
+    @mouseenter="clearTimer"
+    @mouseleave="startTimer"
   >
     <div class="yun-message__content">
+      
       <slot>
-        {{ offset }} -- {{ topOffset }} -- {{ height }} -- {{ bottomOffset }}
         <RenderVnode v-if="message" :vNode="message"/>
       </slot>
     </div>
@@ -73,15 +93,7 @@ defineExpose({
       <Icon @click.stop="visible = false" icon="xmark"></Icon>
     </div>
   </div>
+</Transition>
 </template>
 
-<style>
-.yun-message {
-  width: max-content;
-  position: fixed;
-  left: 50%;
-  top: 20px;
-  transform: translate(-50%);
-  border: 1px solid blue;
-}
-</style>
+

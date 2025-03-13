@@ -2,40 +2,51 @@
   /* colors */
   --yun-color-white: #ffffff;
   --yun-color-black: #000000;
+
+
+  --yun-color-info: #909399;
+  --yun-color-info-light-3: #b1b3b8;  /* mix(#fff, #909399, 0.3) */
+  --yun-color-info-light-5: #c8c9cc;  /* mix(#fff, #909399, 0.5) */
+  --yun-color-info-light-7: #dfe0e1;  /* mix(#fff, #909399, 0.7) */
+  --yun-color-info-light-9: #f2f2f3;  /* mix(#fff, #909399, 0.9) */
+  --yun-color-info-light-8: #e6e6e7;  /* mix(#fff, #909399, 0.8) */
+  --yun-color-info-dark-2: #73767a;   /* mix(#000, #909399, 0.2) */
+
     /* Primary */
-    --yun-color-primary: #409eff;
-    --yun-color-primary-light-3: #80bfff;  /* 混合30%白色 */
-    --yun-color-primary-light-5: #a0cfff;  /* 混合50%白色 */
-    --yun-color-primary-light-8: #e6f2ff;  /* 混合80%白色 */
-    --yun-color-primary-dark-2: #307acc;    /* 混合20%黑色 */
-  
-    /* Success */
-    --yun-color-success: #67c23a;
-    --yun-color-success-light-3: #95d475;
-    --yun-color-success-light-5: #b3e19d;
-    --yun-color-success-light-8: #e1f3d8;
-    --yun-color-success-dark-2: #529b2e;
-  
-    /* Warning */
-    --yun-color-warning: #e6a23c;
-    --yun-color-warning-light-3: #edbd7a;
-    --yun-color-warning-light-5: #f3d3a8;
-    --yun-color-warning-light-8: #fcefd8;
-    --yun-color-warning-dark-2: #b88230;
-  
-    /* Danger */
-    --yun-color-danger: #f56c6c;
-    --yun-color-danger-light-3: #f89898;
-    --yun-color-danger-light-5: #fab6b6;
-    --yun-color-danger-light-8: #fde6e6;
-    --yun-color-danger-dark-2: #c45656;
-  
-    /* Info */
-    --yun-color-info: #909399;
-    --yun-color-info-light-3: #b1b3b8;
-    --yun-color-info-light-5: #c8c9cc;
-    --yun-color-info-light-8: #ebecee;
-    --yun-color-info-dark-2: #73767a;
+    --yun-color-primary: #409EFF;
+--yun-color-primary-light-3: #7ab8ff;  /* mix(#fff, #409EFF, 0.3) */
+--yun-color-primary-light-5: #a6d1ff;  /* mix(#fff, #409EFF, 0.5) */
+--yun-color-primary-light-7: #d2e8ff;  /* mix(#fff, #409EFF, 0.7) */
+--yun-color-primary-light-9: #e8f3ff;  /* mix(#fff, #409EFF, 0.9) */
+--yun-color-primary-light-8: #d9ecff;  /* mix(#fff, #409EFF, 0.8) */
+--yun-color-primary-dark-2: #337acc;   /* mix(#000, #409EFF, 0.2) */
+
+/* success 颜色组 */
+--yun-color-success: #67C23A;
+--yun-color-success-light-3: #95d46e;  /* mix(#fff, #67C23A, 0.3) */
+--yun-color-success-light-5: #b3e09a;  /* mix(#fff, #67C23A, 0.5) */
+--yun-color-success-light-7: #d1edc6;  /* mix(#fff, #67C23A, 0.7) */
+--yun-color-success-light-9: #e8f6e3;  /* mix(#fff, #67C23A, 0.9) */
+--yun-color-success-light-8: #ddf3d4;  /* mix(#fff, #67C23A, 0.8) */
+--yun-color-success-dark-2: #529b2e;   /* mix(#000, #67C23A, 0.2) */
+
+/* warning 颜色组 */
+--yun-color-warning: #E6A23C;
+--yun-color-warning-light-3: #edba6d;  /* mix(#fff, #E6A23C, 0.3) */
+--yun-color-warning-light-5: #f3d09e;  /* mix(#fff, #E6A23C, 0.5) */
+--yun-color-warning-light-7: #f9e7cf;  /* mix(#fff, #E6A23C, 0.7) */
+--yun-color-warning-light-9: #fcf3e7;  /* mix(#fff, #E6A23C, 0.9) */
+--yun-color-warning-light-8: #fbeedc;  /* mix(#fff, #E6A23C, 0.8) */
+--yun-color-warning-dark-2: #b88230;   /* mix(#000, #E6A23C, 0.2) */
+
+/* danger 颜色组 */
+--yun-color-danger: #F56C6C;
+--yun-color-danger-light-3: #f89898;  /* mix(#fff, #F56C6C, 0.3) */
+--yun-color-danger-light-5: #fab5b5;  /* mix(#fff, #F56C6C, 0.5) */
+--yun-color-danger-light-7: #fddada;  /* mix(#fff, #F56C6C, 0.7) */
+--yun-color-danger-light-9: #feeded;  /* mix(#fff, #F56C6C, 0.9) */
+--yun-color-danger-light-8: #fee5e5;  /* mix(#fff, #F56C6C, 0.8) */
+--yun-color-danger-dark-2: #c45656;   /* mix(#000, #F56C6C, 0.2) */
 
   --yun-bg-color: #ffffff;
   --yun-bg-color-page: #f2f3f5;

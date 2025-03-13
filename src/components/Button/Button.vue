@@ -24,6 +24,7 @@ defineExpose({
     :class="{
       [`yun-button--${type}`]: type,
       [`yun-button--${size}`]: size,
+      'ntype':type,
       'is-plain': plain,
       'is-round': round,
       'is-circle': circle,

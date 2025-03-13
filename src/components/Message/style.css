@@ -1,0 +1,86 @@
+.yun-message {
+  --yun-message-bg-color: var(--yun-color-info-light-8);
+  --yun-message-border-color: var(--yun-border-color-lighter);
+  --yun-message-padding: 15px 19px;
+  --yun-message-close-size: 16px;
+  --yun-message-close-icon-color: var(--yun-text-color-placeholder);
+  --yun-message-close-hover-color: var(--yun-text-color-secondary);
+}
+.yun-message {
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  height: 40px;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  border-radius: var(--yun-border-radius-base);
+  border-width: var(--yun-border-width);
+  border-style: var(--yun-border-style);
+  border-color: var(--yun-message-border-color);
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  background-color: var(--yun-message-bg-color);
+  padding: var(--yun-message-padding);
+  display: flex;
+  align-items: center;
+  transition: top var(--yun-transition-duration), opacity var(--yun-transition-duration), transform var(--yun-transition-duration);
+  .yun-message__content {
+    color: var(--yun-message-text-color);
+    overflow-wrap: anywhere;
+  }
+  &.is-close .yun-message__content {
+    padding-right: 30px;
+  }
+  .yun-message__close {
+    display: flex;
+    align-items: center;
+  }
+  .yun-message__close svg {
+    cursor: pointer;
+  }
+}
+/* info 状态 */
+.yun-message--info {
+  --yun-message-bg-color: var(--yun-color-info-light-9);
+  --yun-message-border-color: var(--yun-color-info-light-8);
+  --yun-message-text-color: var(--yun-color-info);
+}
+.yun-message--info .yun-message__close {
+  --yun-icon-color: var(--yun-color-info);
+}
+
+/* success 状态 */
+.yun-message--success {
+  --yun-message-bg-color: var(--yun-color-success-light-9);
+  --yun-message-border-color: var(--yun-color-success-light-8);
+  --yun-message-text-color: var(--yun-color-success);
+}
+.yun-message--success .yun-message__close {
+  --yun-icon-color: var(--yun-color-success);
+}
+
+/* warning 状态 */
+.yun-message--warning {
+  --yun-message-bg-color: var(--yun-color-warning-light-9);
+  --yun-message-border-color: var(--yun-color-warning-light-8);
+  --yun-message-text-color: var(--yun-color-warning);
+}
+.yun-message--warning .yun-message__close {
+  --yun-icon-color: var(--yun-color-warning);
+}
+
+/* danger 状态 */
+.yun-message--danger {
+  --yun-message-bg-color: var(--yun-color-danger-light-9);
+  --yun-message-border-color: var(--yun-color-danger-light-8);
+  --yun-message-text-color: var(--yun-color-danger);
+}
+.yun-message--danger .yun-message__close {
+  --yun-icon-color: var(--yun-color-danger);
+}
+.yun-message.fade-up-enter-from,
+.yun-message.fade-up-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}
