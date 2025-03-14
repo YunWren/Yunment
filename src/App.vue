@@ -127,7 +127,7 @@ function createMge (event: Event){
       <Button type="info" @click="createMge">info</Button>
       <Button type="warning" @click="createMge">warning</Button>
       <Button type="danger" @click="createMge">danger</Button><br/><br/>
-      <p>如果你认为屏幕上存在太多message让你困扰,试图点击键盘'Esc'键一键清屏。</p>
+      <p>🦜如果你认为屏幕上存在太多message让你困扰,试图点击键盘'Esc'键一键清屏。</p>
     </div>
   </main>
 

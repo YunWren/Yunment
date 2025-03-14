@@ -1,1 +1,8 @@
 node_modules
+# VitePress 默认缓存和构建输出
+.vitepress/cache
+.vitepress/dist
+
+# 如果 VitePress 安装在子目录（如 docs）
+docs/.vitepress/cache
+docs/.vitepress/dist
