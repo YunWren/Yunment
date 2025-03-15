@@ -3,20 +3,23 @@
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "​云格 UI"
+  text: "A Yun-Element"
+  tagline: 组件库个人练习仿写
+  image:
+    src: /logo.png
+    alt: 主页logo
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: introduction
+      link: /introduction
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: broken Thoughts
+      link: /brokenThoughts
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: My github
+    details: 点击进入我的github首页~
   - title: Feature B
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: Feature C
