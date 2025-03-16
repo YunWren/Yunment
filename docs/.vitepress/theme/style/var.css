@@ -8,9 +8,9 @@
 }
 
 .dark {
-  --vp-c-brand-1: var(--yun-color-primary-light-3);
-  --vp-c-brand-2: var(--yun-color-primary);
-  --vp-c-brand-3: var(--yun-color-primary-dark-2);
+  --vp-c-brand-1: var(--yun-color-danger-light-3);
+  --vp-c-brand-2: var(--yun-color-danger);
+  --vp-c-brand-3: var(--yun-color-danger-dark-2);
 }
 /* 以前的vp-c-brand已弃用 */
 
