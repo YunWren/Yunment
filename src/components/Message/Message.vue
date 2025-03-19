@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { onMounted, ref, computed,nextTick } from 'vue'
-import Icon from '@/components/Icon/Icon.vue'
+import Icon from '../../components/Icon/Icon.vue'
 import type { MessageProps } from './types'
-import RenderVnode from '@/components/Common/RenderVnode'
+import RenderVnode from '../../components/Common/RenderVnode'
 import { watch } from 'vue';
 import { getLastBottomOffset } from './method';
-import useEventListener from '@/hooks/useEventListener'
+import useEventListener from '../../hooks/useEventListener'
 const props = withDefaults(defineProps<MessageProps>(), {
   type:'info',
   duration:2000,

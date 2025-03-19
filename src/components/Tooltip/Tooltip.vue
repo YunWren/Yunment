@@ -2,7 +2,7 @@
 import { createPopper, type Instance } from '@popperjs/core';
 import type { TooltipEmits,Tooltipinstance,TooltipProps } from './types'
 import { ref, watch,reactive, onUnmounted, computed } from 'vue'
-import useClickOutside from '@/hooks/useClickOutside'
+import useClickOutside from '../../hooks/useClickOutside'
 import { debounce } from 'lodash-es'
 const emits = defineEmits<TooltipEmits>()
 const props = withDefaults(defineProps<TooltipProps>(),{

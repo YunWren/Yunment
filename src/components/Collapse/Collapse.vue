@@ -15,21 +15,24 @@ watch(()=> props.modelValue,()=>{
   console.warn('手风琴模式应该只有一个活动项')
 }
 const handleItemClick = (item:NameType) => {
+  let _activeNames = [...activeNames.value]
   if(props.accordion){
-    activeNames.value = [activeNames.value[0] === item?'':item]
+    _activeNames = [activeNames.value[0] === item?'':item]
+    activeNames.value = _activeNames
   }
   else{
-    const index = activeNames.value.indexOf(item)
+    const index = _activeNames.indexOf(item)
   if(index > -1){
     //如果之前存在，就删除掉之前的
-    activeNames.value.splice(index,1)
+    _activeNames.splice(index,1)
   }else{
     //不存在就添加
-    activeNames.value.push(item)
+    _activeNames.push(item)
   }
+  activeNames.value = _activeNames
   }
-  emits('update:modelValue',activeNames.value)
-  emits('change',activeNames.value)
+  emits('update:modelValue',_activeNames)
+  emits('change',_activeNames )
 }
 //传递给子组件
 provide(collapseContextKey,{

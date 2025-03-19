@@ -11,18 +11,20 @@ hero:
     alt: 主页logo
   actions:
     - theme: brand
-      text: introduction
+      text: 本站介绍
       link: /introduction
     - theme: alt
-      text: broken Thoughts
+      text: 本站碎碎念
       link: /brokenThoughts
 
 features:
   - title: My github
-    details: 点击进入我的github首页~
+    details: ✨点击进入我的github首页~
+    link: https://github.com/YunWren
   - title: Feature B
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 友链
+    details: 🦜LingXiao Qi的首页
+    link: https://github.com/fantasy-lotus
 ---
 

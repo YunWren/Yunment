@@ -48,7 +48,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yungegegege/yunment' }
+      { icon: 'github', link: 'https://github.com/YunWren/yunment' }
     ]
   }
 })

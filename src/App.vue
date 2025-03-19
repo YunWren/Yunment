@@ -10,9 +10,8 @@ import type { ButtonInstance } from '@/components/Button/types'
 import type { Tooltipinstance } from './components/Tooltip/types'
 import Dropdown from './components/Dropdown/Dropdown.vue'
 import type { MenuOption } from './components/Dropdown/types'
-import Message from './components/Message/Message.vue'
 import { createMessage } from './components/Message/method'
-import { log } from 'console'
+import Input from './components/Input/Input.vue'
 const buttonRef = ref<ButtonInstance | null>(null)
 const trigger = ref<any>('click')
 const dropdownTrigger = ref<any>('click')
@@ -65,6 +64,7 @@ function createMge (event: Event){
     </Tooltip>
   </header>
   <main>
+    <Input type="text">你好</Input>
     <Icon icon="fas fa-cloud" type="primary" color="rbg(97, 149, 170)" size="2xl"/>
     <h2><b>基础按钮展示</b></h2><br>
     <Button ref="buttonRef" @click="open">Test Button</Button>
