@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, ref, useAttrs, watch, type Ref, nextTick } from 'vue'
 import type { InputProps,InputEmits } from './types'
 import Icon from '../Icon/Icon.vue';
 defineOptions({
-  name:'YunInput'
+  name:'YunInput',
+  inheritAttrs:false
 })
-const props = withDefaults(defineProps<InputProps>(),{type:'text'})
+const props = withDefaults(defineProps<InputProps>(),{type:'text',autocomplete:'off'})
 const emits = defineEmits<InputEmits>()
+const attrs = useAttrs()
 const innerValue = ref(props.modelValue)
 const isFocus = ref(false)
 const passwordVisible = ref(false)
+const inputRef = ref() as Ref<HTMLInputElement>
 
 const showClear = computed(()=>
   props.clearable &&
@@ -22,24 +25,41 @@ const showPasswordArea = computed(()=>
   !props.disabled &&
   !!innerValue.value
 )
-const togglePasswordVisible = ()=>{
+const togglePasswordVisible = () =>{
   passwordVisible.value = !passwordVisible.value
+}
+const keepFocus = async () => {
+  await nextTick()
+  inputRef.value.focus()
 }
 const handleInput = () =>{
   emits('update:modelValue',innerValue.value)
+  emits('input',innerValue.value)
 }
-const handleFocus = () => {
+const handlechange = () =>{
+  emits('change',innerValue.value)
+}
+const handleFocus = (event:FocusEvent) => {
   isFocus.value = true
+  emits('focus',event)
 }
-const handleBlur = () =>{
+const handleBlur = (event:FocusEvent) =>{
   isFocus.value = false
+  emits('blur',event)
 }
 const clear = ()=>{
   innerValue.value = ''
   emits('update:modelValue','')
+  emits('clear')
+  emits('input','')
+  emits('change','')
 }
+const NOOP = ()=>{}
 watch(()=>props.modelValue,(newValue)=>{
   innerValue.value = newValue
+})
+defineExpose({
+  ref:inputRef
 })
 </script>
 
@@ -56,9 +76,6 @@ watch(()=>props.modelValue,(newValue)=>{
     'is-suffix': $slots.suffix,
     'is-focus':isFocus
    }"
-   @input="handleInput"
-   @focus="handleFocus"
-   @blur="handleBlur"
    >
    <!-- input -->
    <template v-if="type !== 'textarea'">
@@ -72,23 +89,31 @@ watch(()=>props.modelValue,(newValue)=>{
           <slot name="prefix" />
       </span>
       <input
+      ref ="inputRef"
        class="yun-input__inner"
+       v-bind="attrs"
        :type="showPassword?(passwordVisible?'text':'password'):type"
        :disabled="disabled"
+       :readonly="readonly"
+       :autocomplete="autocomplete"
+       :placeholder="placeholder"
+       :autofocus="autofocus"
+       :form="form"
        v-model="innerValue"
+       @change="handlechange"
        @input="handleInput"
-
         @focus="handleFocus"
         @blur="handleBlur"
        >
        <!-- suffix slot -->
-        <span v-if="$slots.suffix || showClear ||showPasswordArea" class="yun-input__suffix">
+        <span v-if="$slots.suffix || showClear ||showPasswordArea" class="yun-input__suffix" @click="keepFocus">
           <slot name="suffix"></slot>
           <Icon
             icon="circle-xmark"
             v-if="showClear"
             class="yun-input__clear"
             @click="clear"
+            @mousedown.prevent="NOOP"
           />
           <Icon 
             icon="eye"
@@ -108,9 +133,17 @@ watch(()=>props.modelValue,(newValue)=>{
    <!-- textarea -->
   <template v-else>
     <textarea 
+    ref ="inputRef"
       class="yun-text__wrapper"
+      v-bind="attrs"
       :disabled="disabled"
       v-model="innerValue"
+      :readonly="readonly"
+       :autocomplete="autocomplete"
+       :placeholder="placeholder"
+       :autofocus="autofocus"
+       :form="form"
+      @change="handlechange"
       @input="handleInput"
       @focus="handleFocus"
       @blur="handleBlur"

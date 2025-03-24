@@ -84,11 +84,22 @@ describe('Input', () => {
     expect(wrapper.find('.yun-input__clear').exists()).toBeFalsy
     const input = wrapper.get('input')
     await input.trigger('focus')
+    expect(wrapper.emitted()).toHaveProperty('focus')
     //出现Icon区域
     expect(wrapper.find('.yun-input__clear').exists()).toBeTruthy()
     //点击值变为空且消失
     await wrapper.get('.yun-input__clear').trigger('click')
     expect(input.element.value).toBe('')
+    expect(wrapper.emitted()).toHaveProperty('change')
+    expect(wrapper.emitted()).toHaveProperty('input')
+    expect(wrapper.emitted()).toHaveProperty('clear')
+    const inputEvent = wrapper.emitted('input')
+    const changeEvent = wrapper.emitted('change')
+    expect(inputEvent![0]).toEqual([''])
+    expect(changeEvent![0]).toEqual([''])
+
+    await input.trigger('blur')
+    expect(wrapper.emitted()).toHaveProperty('blur')
   })
   it('支持密码切换显示', async () => {
     const wrapper = mount(Input, {

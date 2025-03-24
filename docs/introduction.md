@@ -8,7 +8,7 @@
 - **一键复制** 组件代码片段，快速集成到项目中  
 - **查看 API 文档** 与设计规范  
 
-**GitHub 仓库**：[https://github.com/yungegegege/yunment](https://github.com/yungegegege/yunment)  
+**GitHub 仓库**：[点击跳转](https://github.com/YunWren/yunment)  
 
 ---
 
@@ -84,7 +84,6 @@ import { VButton, VInput } from 'your-component-lib'
 
 ## 📈 未来计划
 - [ ] 新增 **Tree 树形控件** 与 **Upload 文件上传** 组件  
-- [ ] 支持 **暗黑模式** 主题切换  
 - [ ] 提供 Figma 设计资源包  
 - [ ] 完善 **国际化** 支持 (i18n)  
 

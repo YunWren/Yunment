@@ -43,6 +43,7 @@ export default defineConfig({
         text: '基础样式',
         items: [
           { text: 'Button', link: '/components/button' },
+          { text: 'Input', link: '/components/Input' },
         ]
       }
     ],

@@ -14,8 +14,8 @@ hero:
       text: 本站介绍
       link: /introduction
     - theme: alt
-      text: 本站碎碎念
-      link: /brokenThoughts
+      text: 快速进入
+      link: /components/Button
 
 features:
   - title: My github
