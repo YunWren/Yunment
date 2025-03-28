@@ -1,0 +1,67 @@
+.yun-select {
+  --yun-select-item-hover-bg-color: var(--yun-fill-color-light);
+  --yun-select-item-font-size: var(--yun-font-size-base);
+  --yun-select-item-font-color: var(--yun-text-color-regular);
+  --yun-select-item-selected-font-color: var(--yun-color);
+  --yun-select-item-disabled-font-color: var(--yun-text-color-placeholder);
+  --yun-select-input-focus-border-color: var(--yun-color);
+}
+
+.yun-select {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 32px;
+  .yun-tooltip .yun-tooltip__popper {
+    padding: 0;
+  }
+  .yun-input.is-focus .yun-input__wrapper {
+    box-shadow: 0 0 0 1px var(--yun-select-input-focus-border-color) inset!important
+  }
+  .yun-input {
+    .header-angle {
+      transition: transform var(--yun-transition-duration);
+      &.is-active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .yun-input__inner {
+    cursor: pointer;
+  }
+  .yun-select__menu {
+    list-style: none;
+    margin: 6px 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .yun-select__menu-item { 
+    margin: 0;
+    font-size: var(--yun-select-item-font-size);
+    padding: 0 32px 0 20px;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--yun-select-item-font-color);
+    height: 34px;
+    line-height: 34px;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--yun-select-item-hover-bg-color);
+    }
+    &.is-selected {
+      color: var(--yun-select-item-selected-font-color);
+      font-weight: 700;    
+    }
+    &.is-disabled {
+      color: var(--yun-select-item-disabled-font-color);
+      cursor: not-allowed;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+  }
+}

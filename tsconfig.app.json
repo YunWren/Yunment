@@ -4,7 +4,8 @@
     "env.d.ts",
     "src/**/*",
     "src/**/*.vue",
-    "docs/demo/Switch/Text.vue"
+    "docs/demo/Switch/Text.vue",
+    "docs/demo/Select/Remote.vue"
   ],
   "exclude": [
     "src/**/__tests__/*"

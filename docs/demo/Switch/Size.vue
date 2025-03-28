@@ -6,16 +6,21 @@ const test = ref(false)
 <template>
   <div class="switch-size-container">
     <Switch v-model="test" size="large"/>
+    <br/>
     <Switch v-model="test"/>
+    <br/>
     <Switch v-model="test" size="small"/>
   </div>
 </template>
 <style scoped>
 .switch-size-container {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   .vk-switch {
     margin-right: 10px;
   }
 }
+/* .switch-small{
+  margin-top: 10px;
+} */
 </style>

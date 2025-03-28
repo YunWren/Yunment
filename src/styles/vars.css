@@ -1,8 +1,12 @@
 :root {
   /* colors */
+  --yun-color: #67b6b2;
+
   --yun-color-white: #ffffff;
   --yun-color-black: #000000;
-
+  
+  --yun-color-night-1-inner: #2b2b2b;
+  --yun-color-night-2-border: #3e3e3e;
 
   --yun-color-info: #909399;
   --yun-color-info-light-3: #b1b3b8;  /* mix(#fff, #909399, 0.3) */

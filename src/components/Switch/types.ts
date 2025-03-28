@@ -9,6 +9,7 @@ export interface SwtichProps {
   name?: string;
   id?: string;
   size?: 'small' | 'large';
+  night?: boolean;
 }
 
 export interface SwtichEmits {

@@ -9,9 +9,15 @@ description: Switch 组件的文档
 
 ## 基础用法
 
-绑定 v-model 到一个 Boolean 类型的变量。 可以使用 **--vk-switch-on-color** 属性与 **--vk-switch-off-color** 属性来设置开关的背景色。
+绑定 v-model 到一个 Boolean 类型的变量。 可以使用 **--yun-switch-on-color** 属性与 **--yun-switch-off-color** 属性来设置开关的背景色。
 
 <preview path="../demo/Switch/Basic.vue" title="基础Switch" description="Switch 基础用例"></preview>
+
+## 深色模式适配
+
+组件内置深色模式样式，可通过添加 ​**night** 属性或设置 CSS 变量实现暗色主题适配。
+
+<preview path="../demo/Switch/Night.vue" title="深色模式适配" description="Switch 深色模式下的表现"></preview>
 
 ## 禁用状态
 
@@ -35,3 +41,4 @@ description: Switch 组件的文档
 使用 **active-text** 属性与 **inactive-text** 属性来设置开关的文字描述。
 
 <preview path="../demo/Switch/Text.vue" title="支持文字描述" description="Switch 文字描述"></preview>
+

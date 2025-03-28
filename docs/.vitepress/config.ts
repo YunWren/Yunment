@@ -44,6 +44,8 @@ export default defineConfig({
         items: [
           { text: 'Button', link: '/components/button' },
           { text: 'Input', link: '/components/Input' },
+          { text: 'Switch', link: '/components/Switch' },
+          { text: 'Select', link: '/components/Select' },
         ]
       }
     ],

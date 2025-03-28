@@ -12,17 +12,8 @@ library.add(fas)
 
 export default {
   ...DefaultTheme,
-  enhanceApp({ app, router }) {
+  enhanceApp({ app }) {
     app.component('demo-preview', ElementPlusContainer)
-    // 彩虹背景动画样式
-    if (typeof window !== 'undefined') {
-      watch(
-        () => router.route.data.relativePath,
-        () => updateHomePageStyle(location.pathname === '/'),
-        { immediate: true },
-      )
-    }
-
   },
 }
 function updateHomePageStyle(value: boolean) {

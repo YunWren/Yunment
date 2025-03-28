@@ -34,6 +34,7 @@
     }
     #arrow::before {
       visibility: visible;
+      /* 注意一下 */
       content: "";
       transform: rotate(45deg);
     }

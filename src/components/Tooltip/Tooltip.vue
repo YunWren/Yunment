@@ -59,6 +59,9 @@ const closeFinal =()=>{
 useClickOutside(popperContainerNode,()=>{
   if(props.trigger === 'click' && isOpen.value && !props.manual)
     closeFinal()
+  if(isOpen.value){
+    emits('click-outside',true)
+  }
 })
 const attachEvents = ()=>{
   if(props.trigger === 'hover'){
@@ -88,6 +91,7 @@ watch(()=> props.manual,(isManual)=>{
   }else{
     attachEvents()
   }
+
 })
 watch(isOpen, (newvalue)=>{
   if(newvalue){

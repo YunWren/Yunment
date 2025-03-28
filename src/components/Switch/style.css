@@ -1,7 +1,7 @@
 .yun-switch {
-  --yun-switch-on-color: var(--yun-color-primary);
+  --yun-switch-on-color:var(--yun-color);
   --yun-switch-off-color: var(--yun-border-color);
-  --yun-switch-on-border-color: var(--yun-color-primary);
+  --yun-switch-on-border-color: var(--yun-color);
   --yun-switch-off-border-color: var(--yun-border-color);
 }
 
@@ -35,13 +35,26 @@
       border-color:var(--yun-switch-on-border-color);
       background-color: var(--yun-switch-on-color);
       .yun-switch__core-action {
-        left: calc(100% - 17px);
+        left: calc(100% - 17.5px);
       }
       .yun-switch__core-inner {
         padding: 0 18px 0 4px;
       }
     }
   }
+  &.is-night {
+    .yun-switch__core {
+      border-color: #3e3e3e;
+      background-color: #2b2b2b;
+      .yun-switch__core-action {
+        background-color: #191919;
+        
+      }
+      .yun-switch__core-inner {
+        padding: 0 18px 0 4px;
+      }
+  }
+}
 }
 .yun-switch--large {
   font-size: 14px;
@@ -52,16 +65,31 @@
     height: 24px;
     border-radius: 12px;
     .yun-switch__core-action {
-      width: 20px;
-      height: 20px;
+      width: 21px;
+      height: 21px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     }
   }
   &.is-checked {
     .yun-switch__core .yun-switch__core-action {
-      left: calc(100% - 21px);
+      left: calc(100% - 21.5px);
       color: var(--yun-switch-on-color);
+      box-shadow: 0 3px 6px rgba(0, 0, 0,0.3); /* 加深激活态阴影 */
     }
   }
+  &.is-night {
+    .yun-switch__core {
+      border-color: #3e3e3e;
+      background-color: #2b2b2b;
+      .yun-switch__core-action {
+        background-color: #191919;
+        
+      }
+      .yun-switch__core-inner {
+        padding: 0 18px 0 4px;
+      }
+  }
+}
 }
 .yun-switch--small {
   font-size: 12px;
@@ -72,16 +100,32 @@
     height: 16px;
     border-radius: 8px;
     .yun-switch__core-action {
-      width: 12px;
-      height: 12px;
+      width: 13px;
+      height: 13px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     }
   }
+  &.is-night {
+    .yun-switch__core {
+      border-color: #3e3e3e;
+      background-color: #2b2b2b;
+      .yun-switch__core-action {
+        background-color: #191919;
+        
+      }
+      .yun-switch__core-inner {
+        padding: 0 18px 0 4px;
+      }
+  }
+}
   &.is-checked {
     .yun-switch__core .yun-switch__core-action {
-      left: calc(100% - 13px);
+      left: calc(100% - 13.5px);
       color: var(--yun-switch-on-color);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 加深激活态阴影 */
     }
   }
+  
 }
 .yun-switch__core {
   display: inline-flex;
@@ -98,17 +142,19 @@
   transition: border-color var(--yun-transition-duration),background-color var(--yun-transition-duration);
   .yun-switch__core-action {
     position: absolute;
-    left: 1px;
+    left: 0.5px;
     border-radius: var(--yun-border-radius-circle);
-    width: 16px;
-    height: 16px;
+    width: 17px;
+    height: 17px;
     background-color: var(--yun-color-white);
     transition: all var(--yun-transition-duration);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2); /* 基础阴影 */
+    transition: all var(--yun-transition-duration), box-shadow 0.2s; /* 添加阴影过渡 */
   }
   .yun-switch__core-inner {
     width: 100%;
     transition: all var(--yun-transition-duration);
-    height: 16px;
+    height: 18px;
     display: flex;
     justify-content: center;
     align-items: center;

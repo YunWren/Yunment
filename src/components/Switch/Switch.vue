@@ -6,8 +6,8 @@ import type { SwtichEmits,SwtichProps } from './types'
     inheritAttrs: false
 })
 const props = withDefaults(defineProps<SwtichProps>(), {
-  activeValue: true,
-  inactiveValue: false
+  activeValue :() => true,
+  inactiveValue: () => false
 })
 console.log(props.activeValue,props.inactiveValue)
 
@@ -55,7 +55,8 @@ watch(() => props.modelValue, (newVal) => {
     :class="{
       [`yun-switch--${size}`]: size,
       'is-disabled': disabled,
-      'is-checked': checked
+      'is-checked': checked,
+      'is-night': night,
     }"
     @click="switchValue"
   >
