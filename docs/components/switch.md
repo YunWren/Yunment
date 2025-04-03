@@ -1,6 +1,13 @@
 ---
-title: Switch | V-Element
+title: Switch | Yun-Element
 description: Switch 组件的文档
+layout: doc
+prev:
+  text: 'Input'
+  link: 'components/Input'
+next:
+  text: 'Select'
+  link: 'components/Select'
 ---
 
 # Switch 开关
@@ -42,3 +49,32 @@ description: Switch 组件的文档
 
 <preview path="../demo/Switch/Text.vue" title="支持文字描述" description="Switch 文字描述"></preview>
 
+## API
+
+### 属性
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>model-value / v-model</td>
+      <td>绑定值</td>
+      <td><code>'string' | 'boolean' | 'number'</code></td>
+      <td>false</td></tr>
+      <tr><td>disabled</td><td>是否禁用</td><td><code>boolean</code></td><td>false</td></tr>
+      <tr><td>active-text</td><td>switch 打开时的文字描述</td><td><code>string</code></td><td></td></tr>
+      <tr><td>inactive-text</td><td>switch 的状态为 off 时的文字描述</td><td><code>'large' | 'small'</code></td><td></td></tr>
+      <tr><td>active-value</td><td>switch 状态为 on 时的值</td><td><code>'string' | 'boolean' | 'number'</code></td><td>true</td></tr>
+      <tr><td>inactive-value</td><td>switch 状态为 off 时的值</td><td><code>'string' | 'boolean' | 'number'</code></td><td>false</td></tr>
+      <tr><td>name</td><td>switch 对应的 name 属性</td><td><code>string</code></td><td></td></tr>
+      <tr><td>id</td><td>input 的 id</td><td><code>string</code></td><td></td></tr>
+      <tr><td>black</td><td>黑夜模式</td><td><code>boolean</code></td><td>false</td></tr>
+  </tbody>
+</table>

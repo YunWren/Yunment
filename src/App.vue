@@ -5,7 +5,7 @@ import Item from './components/Collapse/CollapseItem.vue'
 import { ref, onMounted, h } from 'vue'
 import Tooltip from './components/Tooltip/Tooltip.vue'
 import Icon from './components/Icon/Icon.vue'
-import myAlert from './components/Alert/myAlert.vue'
+import Alert from './components/Alert/Alert.vue'
 import type { ButtonInstance } from '@/components/Button/types'
 import type { Tooltipinstance } from './components/Tooltip/types'
 import Dropdown from './components/Dropdown/Dropdown.vue'
@@ -64,7 +64,7 @@ function createMge (event: Event){
     </Tooltip>
   </header>
   <main>
-    <Input type="text">你好</Input>
+    <!-- <Input type="text">你好</Input> -->
     <Icon icon="fas fa-cloud" type="primary" color="rbg(97, 149, 170)" size="2xl"/>
     <h2><b>基础按钮展示</b></h2><br>
     <Button ref="buttonRef" @click="open">Test Button</Button>

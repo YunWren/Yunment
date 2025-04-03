@@ -42,11 +42,16 @@ export default defineConfig({
       }, {
         text: '基础样式',
         items: [
-          { text: 'Button', link: '/components/button' },
-          { text: 'Input', link: '/components/Input' },
-          { text: 'Switch', link: '/components/Switch' },
-          { text: 'Select', link: '/components/Select' },
-          { text: 'Form', link: '/components/Form' },
+          { text: 'Button 按钮', link: '/components/button' },
+          { text: 'Alert 提示', link: '/components/Alert' },
+          { text: 'Collapse 折叠面板', link: '/components/Collapse' },
+          { text: 'Tooltip 文字提示', link: '/components/Tooltip' },
+          { text: 'Dropdown 下拉菜单', link: '/components/Dropdown' },
+          { text: 'Message 消息', link: '/components/Message' },
+          { text: 'Input 文字输入', link: '/components/Input' },
+          { text: 'Switch 开关', link: '/components/Switch' },
+          { text: 'Select 选择器', link: '/components/Select' },
+          { text: 'Form 表单', link: '/components/Form' },
         ]
       }
     ],

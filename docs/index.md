@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "​云格 UI"
+  name: "​云格"
   text: "A Yun-Element"
   tagline: 组件库个人练习仿写
   image:
@@ -21,8 +21,8 @@ features:
   - title: My github
     details: ✨点击进入我的github首页~
     link: https://github.com/YunWren
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: My email
+    details: yunyungege@outlook.com
   - title: 友链
     details: 🦜LingXiao Qi的首页
     link: https://github.com/fantasy-lotus

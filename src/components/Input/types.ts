@@ -14,6 +14,7 @@ export interface InputProps {
   form?: string,
 }
 
+
 export interface InputEmits {
   (e: 'update:modelValue', value: string): void,
   //input事件指的是值有变化就算

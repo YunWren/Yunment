@@ -103,4 +103,8 @@
   --yun-transition-duration: .3s;
   --yun-transition-duration-fast: .2s;
 
+  --yun-component-size-large: 43.2px;
+  --yun-component-size:35px;
+  --yun-component-size-small:28.8px;
+
 }

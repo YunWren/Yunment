@@ -57,7 +57,7 @@ const close = () => {
 
       <!-- 关闭按钮 -->
       <button
-        v-if="closable"
+        v-if="!closable"
         class="alert-close"
         @click="close"
         type="button"
