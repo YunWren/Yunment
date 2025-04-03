@@ -8,9 +8,8 @@
   import Input from '../Input/Input.vue'
   import Icon from '../Icon/Icon.vue'
   import type { InputInstance } from '../Input/types'
-import { isFunction } from 'lodash-es'
-import { log } from 'console'
-import { faL } from '@fortawesome/free-solid-svg-icons'
+  import { debounce, isFunction } from 'lodash-es'
+
 
   defineOptions({
     name:'YunSelect'
@@ -30,6 +29,7 @@ import { faL } from '@fortawesome/free-solid-svg-icons'
     selectedOption:initialOption,
     mouseHover:false,
     loading:false,
+    highlightIndex:-1,
   })
   const inputRef = ref() as Ref<InputInstance>
   const isDropdownShow = ref(false)
@@ -49,20 +49,22 @@ const generateFilterOption = async (searchValue:string)=>{
       filteredOptions.value = await props.remoteMethod(searchValue)
     } catch(e){
       console.error(e)
-      filteredOptions.value = [  ]
+      filteredOptions.value = []
     }finally{
       states.loading = false
     }
   }else{
     filteredOptions.value = props.options.filter(options => options.label.includes(searchValue))
-    console.log(filteredOptions.value)
-    console.log('enter')
   }
+  states.highlightIndex = -1
 }
-
+const timeout = computed(()=> props.remote? 300:0)
 const onFilter = () => {
   generateFilterOption(states.inputValue)
 }
+const debouceOnFilter = debounce(()=>{
+  onFilter()
+},timeout.value)
 const filterefPlaceholder = computed(()=>{
   return(props.filterable && states.selectedOption&& isDropdownShow.value)
   ? states.selectedOption.label : props.placeholder
@@ -82,6 +84,7 @@ const controlDropdown = (show: boolean) => {
     if(props.filterable){
       states.inputValue = states.selectedOption?states.selectedOption.label:''
     }
+    states.highlightIndex = -1
   }
   isDropdownShow.value = show
   emits('visible-change', show)
@@ -135,7 +138,50 @@ const popperOptions: any = {
         && states.selectedOption
         && states.inputValue.trim() !== ''
   })
-  
+  //键盘交互
+  const handleKeydown = (e:KeyboardEvent)=>{
+    switch (e.key) {
+      case 'Enter':
+        if(!isDropdownShow.value) {
+          controlDropdown(true)
+        } else {
+          if(states.highlightIndex> -1 && filteredOptions.value[states.highlightIndex])
+          {
+            itemSelect(filteredOptions.value[states.highlightIndex])
+          }else{
+            controlDropdown(false)
+          }
+        }
+        break
+      case 'Escape':
+        if(isDropdownShow.value){
+          controlDropdown(false)
+        }
+        break
+      case 'ArrowUp':
+        e.preventDefault()
+        if(filteredOptions.value.length > 0){
+          if(states.highlightIndex === -1 || states.highlightIndex === 0){
+            states.highlightIndex = filteredOptions.value.length - 1
+          } else {
+            states.highlightIndex--
+          }
+        }
+        break
+      case 'ArrowDown':
+        e.preventDefault()
+        if(filteredOptions.value.length > 0){
+            if(states.highlightIndex === -1 || states.highlightIndex === (filteredOptions.value.length-1)){
+              states.highlightIndex = 0
+            } else {
+              states.highlightIndex++
+            }
+          }
+        break
+      default:
+        break;
+    }
+  }
   const onClear = () => {
     console.log('触发了');
     
@@ -169,7 +215,8 @@ const popperOptions: any = {
        :placeholder="filterefPlaceholder"
        ref="inputRef"
        :readonly="!filterable || !isDropdownShow"
-       @input="onFilter"
+       @input="debouceOnFilter"
+       @keydown = 'handleKeydown'
        >
         <template #suffix>
           <Icon
@@ -187,13 +234,20 @@ const popperOptions: any = {
         </template>
       </Input>
        <template #content>
-        <ul class="yun-select__menu">
+        <div class="yun-select__loading" v-if="states.loading"><Icon icon="spinner" spin></Icon></div>
+        <div class="yun-select__nodata" v-else-if="filterable && filteredOptions.length === 0">no matching data</div>
+        <ul class="yun-select__menu" v-else> 
           <template v-for="(item,index) in filteredOptions" :key="index">
             <li
              class="yun-select__menu-item"
-             :class="{'is-disabled':item.disabled,'is-selected':states.selectedOption?.value === item.value}"
+             :class="{
+              'is-disabled':item.disabled,
+              'is-selected':states.selectedOption?.value === item.value,
+              'is-highlighted':states.highlightIndex === index
+              }"
              :id="`select-item-${item.value}`"
              @click.stop="itemSelect(item)"
+             
              >
              <RenderVnode :vNode="renderLabel ? renderLabel(item):item.label"></RenderVnode>
             </li>

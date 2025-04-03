@@ -25,7 +25,13 @@
       }
     }
   }
-
+  .yun-select__nodata, .yun-select__loading {
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+    color: var(--yun-text-color-secondary);
+    font-size: var(--yun-text-font-size);
+  }
   .yun-input__inner {
     cursor: pointer;
   }
@@ -61,6 +67,9 @@
       &:hover {
         background-color: transparent;
       }
+    }
+    &.is-highlighted {
+      background-color: var(--yun-select-item-hover-bg-color);
     }
 
   }

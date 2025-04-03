@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import Button from '@/components/Button/Button.vue'
 import Select from '@/components/Select/Select.vue'
 const test = ref('1')
 const options2 = [
@@ -13,4 +14,5 @@ const options2 = [
   <Select v-model="test" placeholder="基础选择器，请选择" :options="options2"/>
   <br><br>
   <span>value:{{test}}</span>
+
 </template>
