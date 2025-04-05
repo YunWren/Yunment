@@ -35,7 +35,7 @@
     "@popperjs/core": "^2.11.8",
     "async-validator": "^4.2.5",
     "lodash-es": "^4.17.21",
-    "postcss-nested": "^7.0.2",
+    "postcss-nested": "^7.0.2"
   },
   "devDependencies": {
     "@microsoft/api-extractor": "^7.52.3",
