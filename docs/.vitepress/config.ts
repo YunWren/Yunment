@@ -2,7 +2,15 @@ import { defineConfig } from 'vitepress'
 import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { title } from 'process'
 // https://vitepress.dev/reference/site-config
+
+module.exports = {
+  title: 'YunElement',
+  base: ".",
+  description: 'Loading...',
+  dest: './dist'
+}
 export default defineConfig({
   title: "YUN Element",
   description: "A VitePress Site",
