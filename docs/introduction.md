@@ -45,7 +45,6 @@
 | **导航组件** | Switch      | 多级菜单联动、路由集成           |
 
 **特色组件示例：互动Alert**  
-![Table 组件截图](/image.png)  
 ```vue
     <myAlert type="primary" closable>this is a alert abot Primary</myAlert>
     <myAlert type="success" closable>this is a alert abot Success</myAlert>
