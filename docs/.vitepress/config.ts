@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url'
 
 export default defineConfig({
   base: ".",
-  outDir: './dist',
   title: "YUN Element",
   description: "A VitePress Site",
   markdown: {
