@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url'
 
 export default defineConfig({
   base: "/yunment/",
-  outDir: "../dist",
   title: "YUN Element",
   description: "A VitePress Site",
   markdown: {
@@ -43,7 +42,7 @@ export default defineConfig({
       }, {
         text: '基础样式',
         items: [
-          { text: 'Button 按钮', link: '/components/button' },
+          { text: 'Button 按钮', link: '/components/Button' },
           { text: 'Alert 提示', link: '/components/Alert' },
           { text: 'Collapse 折叠面板', link: '/components/Collapse' },
           { text: 'Tooltip 文字提示', link: '/components/Tooltip' },

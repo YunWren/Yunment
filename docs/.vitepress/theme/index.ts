@@ -2,7 +2,6 @@ import DefaultTheme from "vitepress/theme";
 import '@vitepress-demo-preview/component/dist/style.css'
 import '../../../src/styles/index.css'
 import '../../../src/styles/index.css'
-import { watch } from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import './style/index.css'
