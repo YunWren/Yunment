@@ -12,7 +12,7 @@
 
 
   defineOptions({
-    name:'YunSelect'
+    name:'YSelect'
   })
   const props = withDefaults(defineProps<SelectProps>(),{
     options:()=>[]

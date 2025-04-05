@@ -10,6 +10,9 @@ const emits = defineEmits<DropdownEmits>()
 const visibleChange = (e:boolean)=>{
   emits('visible-change',e)
 }
+defineOptions({
+  name: 'YDropdown'
+})
 const itemClick = (e:MenuOption)=>{
   if(e.disabled){
     return

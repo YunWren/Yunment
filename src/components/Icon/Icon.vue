@@ -5,7 +5,7 @@ import type { IconProps } from './types'
 import { computed } from 'vue';
 // import { defineProps } from 'vue'
 defineOptions({
-  name:'yunIcon',
+  name:'YIcon',
   inheritAttrs:false
 })
 const props = defineProps<FontAwesomeIconProps & IconProps>()

@@ -5,7 +5,7 @@ import Icon from "../Icon/Icon.vue";
 // import { defineComponent, defineProps } from "vue"
 // import './style.css'
 defineOptions({
-  name: 'yunButton'
+  name: 'YButton'
 })
 withDefaults(defineProps<ButtonProps>(), {
   nativeType: 'button'

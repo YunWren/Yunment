@@ -4,6 +4,9 @@ import type { TooltipEmits,Tooltipinstance,TooltipProps } from './types'
 import { ref, watch,reactive, onUnmounted, computed } from 'vue'
 import useClickOutside from '../../hooks/useClickOutside'
 import { debounce } from 'lodash-es'
+defineOptions({
+  name: 'YTooltip'
+})
 const emits = defineEmits<TooltipEmits>()
 const props = withDefaults(defineProps<TooltipProps>(),{
   placement:'bottom',

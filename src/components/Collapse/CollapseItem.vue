@@ -4,7 +4,7 @@ import { collapseContextKey } from './types'
 import { inject, computed } from 'vue'
 import Icon from '../Icon/Icon.vue'
 defineOptions({
-  name:'YunCollapseItem'
+  name:'YCollapseItem'
 })
 const props = defineProps<CollapseItemProps>()
 const collapseContext = inject(collapseContextKey)

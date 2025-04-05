@@ -12,7 +12,9 @@ const props = withDefaults(defineProps<MessageProps>(), {
   offset:15,
   transitionName:'fade-up'
 })
-
+defineOptions({
+  name: 'YMessage'
+})
 const visible = ref(false)
 const messageRef = ref<HTMLDivElement>()
 //高度计算区域

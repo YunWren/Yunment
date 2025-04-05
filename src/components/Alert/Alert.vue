@@ -4,7 +4,9 @@ import Icon from '@/components/Icon/Icon.vue'
 import type { AlertType, MyAlertProps, MyAlertEmits } from './types'
 
 // 类型定义
-
+defineOptions({
+  name: 'YAlert'
+})
 
 withDefaults(defineProps<MyAlertProps>(), {
   type: 'primary',

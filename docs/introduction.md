@@ -37,12 +37,12 @@
 ---
 
 ## 🎯 核心组件展示
-| 组件分类 | 代表组件 | 功能亮点 |
-|---------|----------|---------|
+| 组件分类     | 代表组件    | 功能亮点                         |
+| ------------ | ----------- | -------------------------------- |
 | **表单控件** | Input, Form | 支持表单验证、禁用状态、尺寸定制 |
-| **数据展示** | Alert  | 动态标签配色 |
-| **反馈组件** | Message | 全局消息提示 |
-| **导航组件** | Switch| 多级菜单联动、路由集成 |
+| **数据展示** | Alert       | 动态标签配色                     |
+| **反馈组件** | Message     | 全局消息提示                     |
+| **导航组件** | Switch      | 多级菜单联动、路由集成           |
 
 **特色组件示例：互动Alert**  
 ![Table 组件截图](/image.png)  
@@ -59,24 +59,24 @@
 ## 🚀 快速上手
 ### 安装
 ```bash
-npm install your-component-lib
+npm i yun-element
 ```
 
 ### 基础使用
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
-import VComponentLib from 'your-component-lib'
+import Yunelement from 'yun-element'
 
 createApp(App)
-  .use(VComponentLib)
+  .use(Yunelement)
   .mount('#app')
 ```
 
 ### 按需引入（推荐）
 ```vue
 <script setup>
-import { VButton, VInput } from 'your-component-lib'
+import { YButton, YInput } from 'Yunelement'
 </script>
 ```
 

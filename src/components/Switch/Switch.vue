@@ -2,7 +2,7 @@
 import { ref, computed, onMounted,watch,watchEffect } from 'vue'
 import type { SwtichEmits,SwtichProps } from './types'
   defineOptions({
-    name:'yunSwtich',
+    name:'YSwtich',
     inheritAttrs: false
 })
 const props = withDefaults(defineProps<SwtichProps>(), {

@@ -5,7 +5,7 @@ import type { FormContext, FormItemContext, FormItemInstance, FormItemProps, For
 import { formContextKey, formItemContextKey } from './types';
 import Schema from 'async-validator'
 defineOptions({
-  name:'YunFormItem'
+  name:'YFormItem'
 })
 //
 const validateStatus:ValidateStatusProps = reactive({
