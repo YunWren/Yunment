@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { initial, isNil } from 'lodash'
+import { isNil } from 'lodash-es'
 import { inject,computed, reactive, provide, onMounted, onUnmounted } from 'vue'
-import type { FormContext, FormItemContext, FormItemInstance, FormItemProps, FormValidateFailure, ValidateStatusProps } from './types';
+import type { FormItemContext, FormItemInstance, FormItemProps, FormValidateFailure, ValidateStatusProps } from './types';
 import { formContextKey, formItemContextKey } from './types';
 import Schema from 'async-validator'
 defineOptions({
