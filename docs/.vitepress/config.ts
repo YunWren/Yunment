@@ -1,17 +1,10 @@
 import { defineConfig } from 'vitepress'
 import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
-import path from 'path'
 import { fileURLToPath } from 'url'
-import { title } from 'process'
-// https://vitepress.dev/reference/site-config
 
-module.exports = {
-  title: 'YunElement',
-  base: ".",
-  description: 'Loading...',
-  dest: './dist'
-}
 export default defineConfig({
+  base: ".",
+  outDir: '../dist',
   title: "YUN Element",
   description: "A VitePress Site",
   markdown: {
@@ -34,7 +27,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+
     nav: [
       { text: '首页', link: '/' },
       { text: '上手', link: '/introduction' }
