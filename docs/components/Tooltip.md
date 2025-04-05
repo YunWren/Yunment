@@ -19,7 +19,7 @@ description: Tooltip 组件的文档
 ## 触发方式
 由 trigger 属性决定触发方式： hover | click, 默认为 hover
 
-<preview path="../demo/Tooltip/trigger.vue" title="触发Tooltip" description="Tooltip 触发用例"></preview>
+<preview path="../demo/Tooltip/Trigger.vue" title="触发Tooltip" description="Tooltip 触发用例"></preview>
 
 ## 更多内容的文字提示
 展示多行文本或者是设置文本内容的格式
