@@ -15,7 +15,7 @@ hero:
       link: /introduction
     - theme: alt
       text: 快速进入
-      link: /components/Button
+      link: /components/button
 
 features:
   - title: My github

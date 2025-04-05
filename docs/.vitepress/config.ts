@@ -42,7 +42,7 @@ export default defineConfig({
       }, {
         text: '基础样式',
         items: [
-          { text: 'Button 按钮', link: '/components/Button' },
+          { text: 'Button 按钮', link: '/components/button' },
           { text: 'Alert 提示', link: '/components/Alert' },
           { text: 'Collapse 折叠面板', link: '/components/Collapse' },
           { text: 'Tooltip 文字提示', link: '/components/Tooltip' },
