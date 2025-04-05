@@ -20,16 +20,22 @@
 📦 快速集成
 bash
 # 全量引入
-npm install yun-ui
-
+```bash
+npm i yun-element
+```
 # 按需引入（推荐）
-npm install @yun-ui/button @yun-ui/input
-ts
-// 全局注册
-import { createApp } from 'vue'
-import YunUI from 'yun-ui'
+```bash
+npm install @yun-element/Ybutton @yun-element/Yinput
+```
 
-createApp(App).use(YunUI)
+```bash
+import { createApp } from 'vue'
+import YunElement from 'yun-element'
+
+createApp(App).use(YunElement)
+```
+
+
 🌐 在线体验
 访问 组件演示站 可体验：
 
@@ -41,16 +47,6 @@ createApp(App).use(YunUI)
 bash
 # 克隆仓库
 git clone https://github.com/yungegegege/yunment.git
-
-# 安装依赖
-pnpm install
-
-# 启动组件开发环境
-pnpm dev
-
-# 构建文档站点
-pnpm build:docs
-项目结构​（基于 monorepo）：
 
 🤝 贡献指引
 欢迎通过以下方式参与共建：
