@@ -50,7 +50,7 @@
     "@vue/eslint-config-typescript": "^14.4.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
-    "ajv": "^7.2.4",
+    "ajv": "^8.5.0",
     "ajv-draft-04": "^1.0.0",
     "eslint": "^9.21.0",
     "eslint-plugin-vue": "^9.32.0",
@@ -73,7 +73,7 @@
     "vitepress": "^1.6.3",
     "vitest": "^3.0.8",
     "vue": "^3.3.0",
-    "vue-tsc": "^2.2.2"
+    "vue-tsc": "^2.1.10"
   },
   "resolutions": {
     "vite": "^4.4.0"
