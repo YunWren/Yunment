@@ -3,7 +3,7 @@ import { containerPreview, componentPreview } from '@vitepress-demo-preview/plug
 import { fileURLToPath } from 'url'
 
 export default defineConfig({
-  base: "/",
+  base: "/yunment/",
   title: "YUN Element",
   description: "A VitePress Site",
   markdown: {
